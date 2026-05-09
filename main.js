@@ -546,9 +546,10 @@ canvas.addEventListener("click", (e) => {
 
     init();
 
-    draw();
-
-    gameLoop();
+    document.fonts.ready.then(() => {
+      draw();
+      gameLoop();
+    });
 
     return;
   }
@@ -560,9 +561,10 @@ canvas.addEventListener("click", (e) => {
 
     init();
 
-    draw();
-
-    gameLoop();
+    document.fonts.ready.then(() => {
+      draw();
+      gameLoop();
+    });
   }
 });
 
@@ -627,4 +629,6 @@ document.getElementById("right").addEventListener("touchstart", () => {
 });
 
 // INITIAL SCREEN
-drawStartScreen();
+document.fonts.ready.then(() => {
+  drawStartScreen();
+});
